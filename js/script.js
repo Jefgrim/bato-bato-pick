@@ -169,7 +169,20 @@ function pickedgunting() {
     // add score to bot
     botScore += 1;
 
-    alert("Player 1 Picked Gunting | Bot Picked Bato | Bot Wins");
+    // create element to be added later using insert adjacent element
+    let mhItemContainer = document.createElement("div");
+    mhItemContainer.classList = "mhContentContainer";
+    let mhItem = document.createElement("h3");
+
+    // insert match history container inside match history div
+    mh.insertAdjacentElement("afterbegin", mhItemContainer);
+
+    // add match history item content text
+    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Bato | Bot Wins";
+
+    // insert match history item inside match history container
+    mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
+
 
     // changed the text of score
     botScoreTxt.textContent = botScore;
@@ -180,7 +193,19 @@ function pickedgunting() {
     // add score to draw
     p1Score += 1;
 
-    alert("Player 1 Picked Gunting | Bot Picked Papel | Player 1 Wins");
+    // create element to be added later using insert adjacent element
+    let mhItemContainer = document.createElement("div");
+    mhItemContainer.classList = "mhContentContainer";
+    let mhItem = document.createElement("h3");
+
+    // insert match history container inside match history div
+    mh.insertAdjacentElement("afterbegin", mhItemContainer);
+
+    // add match history item content text
+    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Bato | Player 1 Wins";
+
+    // insert match history item inside match history container
+    mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
 
     // changed the text of score
     p1ScoreTxt.textContent = p1Score;
@@ -191,6 +216,18 @@ function pickedgunting() {
     // add score to bot
     draws += 1;
 
-    alert("Player 1 Picked Gunting | Bot Picked Gunting | Draw");
+    // create element to be added later using insert adjacent element
+    let mhItemContainer = document.createElement("div");
+    mhItemContainer.classList = "mhContentContainer";
+    let mhItem = document.createElement("h3");
+
+    // insert match history container inside match history div
+    mh.insertAdjacentElement("afterbegin", mhItemContainer);
+
+    // add match history item content text
+    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Gunting | Draw";
+
+    // insert match history item inside match history container
+    mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
   }
 }
