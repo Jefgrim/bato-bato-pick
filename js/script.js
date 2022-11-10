@@ -7,6 +7,10 @@ let draws = 0;
 let p1ScoreTxt = document.querySelector("#p1ScoreTxt");
 let botScoreTxt = document.querySelector("#botScoreTxt");
 
+// get Image for picked moves
+let playerMoveImg = document.querySelector("#playerPickedMove");
+let botMoveImg = document.querySelector("#botPickedMove");
+
 // get the button
 let batoBtn = document.querySelector("#bato");
 let papelBtn = document.querySelector("#papel");
@@ -29,6 +33,10 @@ function pickedBato() {
     // add score to draw
     draws += 1;
 
+    // changed img of playermove
+    playerMoveImg.src = "images/Rock-Player.svg";
+    botMoveImg.src = "images/Rock-Bot.svg";
+
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
     mhItemContainer.classList = "mhContentContainer";
@@ -49,6 +57,10 @@ function pickedBato() {
   else if (botpicks == 1) {
     // add score to bot
     botScore += 1;
+
+    // changed img of playermove
+    playerMoveImg.src = "images/Rock-Player.svg";
+    botMoveImg.src = "images/Paper-Bot.svg";
 
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
@@ -73,6 +85,10 @@ function pickedBato() {
   else if (botpicks == 2) {
     // add score to player 1
     p1Score += 1;
+
+    // changed img of playermove
+    playerMoveImg.src = "images/Rock-Player.svg";
+    botMoveImg.src = "images/Scissor-Bot.svg";
 
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
@@ -124,6 +140,10 @@ function pickedpapel() {
     // add score to player 1
     p1Score += 1;
 
+    // changed img of playermove
+    playerMoveImg.src = "images/Paper-Player.svg";
+    botMoveImg.src = "images/Rock-Bot.svg";
+
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
     mhItemContainer.classList = "mhContentContainer";
@@ -149,6 +169,10 @@ function pickedpapel() {
     // add score to draw
     draws += 1;
 
+    // changed img of playermove
+    playerMoveImg.src = "images/Paper-Player.svg";
+    botMoveImg.src = "images/Paper-Bot.svg";
+
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
     mhItemContainer.classList = "mhContentContainer";
@@ -169,6 +193,10 @@ function pickedpapel() {
   else if (botpicks == 2) {
     // add score to bot
     botScore += 1;
+
+    // changed img of playermove
+    playerMoveImg.src = "images/Paper-Player.svg";
+    botMoveImg.src = "images/Scissor-Bot.svg";
 
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
@@ -220,6 +248,10 @@ function pickedgunting() {
     // add score to bot
     botScore += 1;
 
+    // changed img of playermove
+    playerMoveImg.src = "images/Scissor-Player.svg";
+    botMoveImg.src = "images/Rock-Bot.svg";
+
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
     mhItemContainer.classList = "mhContentContainer";
@@ -242,6 +274,10 @@ function pickedgunting() {
   else if (botpicks == 1) {
     // add score to draw
     p1Score += 1;
+
+    // changed img of playermove
+    playerMoveImg.src = "images/Scissor-Player.svg";
+    botMoveImg.src = "images/Paper-Bot.svg";
 
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
@@ -266,6 +302,10 @@ function pickedgunting() {
   else if (botpicks == 2) {
     // add score to bot
     draws += 1;
+
+    // changed img of playermove
+    playerMoveImg.src = "images/Scissor-Player.svg";
+    botMoveImg.src = "images/Scissor-Bot.svg";
 
     // create element to be added later using insert adjacent element
     let mhItemContainer = document.createElement("div");
