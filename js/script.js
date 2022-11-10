@@ -96,12 +96,10 @@ function pickedBato() {
 
   //   Check who wins
   if (p1Score == 5) {
-    console.log("Player 1 Wins!");
     batoBtn.setAttribute("disabled", "");
     papelBtn.setAttribute("disabled", "");
     guntingBtn.setAttribute("disabled", "");
   } else if (botScore == 5) {
-    console.log("Bot Wins!");
     batoBtn.setAttribute("disabled", "");
     papelBtn.setAttribute("disabled", "");
     guntingBtn.setAttribute("disabled", "");
