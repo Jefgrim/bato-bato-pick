@@ -99,10 +99,20 @@ function pickedBato() {
     batoBtn.setAttribute("disabled", "");
     papelBtn.setAttribute("disabled", "");
     guntingBtn.setAttribute("disabled", "");
+
+    p1ScoreTxt.textContent = p1Score + " (Winner!)";
+    p1ScoreTxt.classList = "winHistory";
+    botScoreTxt.textContent = botScore + " (Loser!)";
+    botScoreTxt.classList = "loseHistory";
   } else if (botScore == 5) {
     batoBtn.setAttribute("disabled", "");
     papelBtn.setAttribute("disabled", "");
     guntingBtn.setAttribute("disabled", "");
+
+    botScoreTxt.textContent = botScore + " (Winner!)";
+    botScoreTxt.classList = "winHistory";
+    p1ScoreTxt.textContent = p1Score + " (Loser!)";
+    p1ScoreTxt.classList = "loseHistory";
   }
 }
 
@@ -125,6 +135,7 @@ function pickedpapel() {
     // add match history item content text
     mhItem.textContent =
       "Player 1 Picks Papel | Bot Picks Bato | Player 1 Scored";
+    mhItem.classList = "winHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
@@ -148,6 +159,7 @@ function pickedpapel() {
 
     // add match history item content text
     mhItem.textContent = "Player 1 Picks Papel | Bot Picks Papel | Draw";
+    mhItem.classList = "drawHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
@@ -169,12 +181,34 @@ function pickedpapel() {
     // add match history item content text
     mhItem.textContent =
       "Player 1 Picks Papel | Bot Picks Gunting | Bot Scored";
+    mhItem.classList = "loseHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
 
     // changed the text of score
     botScoreTxt.textContent = botScore;
+  }
+
+  //   Check who wins
+  if (p1Score == 5) {
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
+
+    p1ScoreTxt.textContent = p1Score + " (Winner!)";
+    p1ScoreTxt.classList = "winHistory";
+    botScoreTxt.textContent = botScore + " (Loser!)";
+    botScoreTxt.classList = "loseHistory";
+  } else if (botScore == 5) {
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
+
+    botScoreTxt.textContent = botScore + " (Winner!)";
+    botScoreTxt.classList = "winHistory";
+    p1ScoreTxt.textContent = p1Score + " (Loser!)";
+    p1ScoreTxt.classList = "loseHistory";
   }
 }
 
@@ -199,7 +233,7 @@ function pickedgunting() {
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
-
+    mhItem.classList = "loseHistory";
     // changed the text of score
     botScoreTxt.textContent = botScore;
   }
@@ -223,7 +257,7 @@ function pickedgunting() {
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
-
+    mhItem.classList = "winHistory";
     // changed the text of score
     p1ScoreTxt.textContent = p1Score;
   }
@@ -243,8 +277,30 @@ function pickedgunting() {
 
     // add match history item content text
     mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Gunting | Draw";
+    mhItem.classList = "drawHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
+  }
+
+  //   Check who wins
+  if (p1Score == 5) {
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
+
+    p1ScoreTxt.textContent = p1Score + " (Winner!)";
+    p1ScoreTxt.classList = "winHistory";
+    botScoreTxt.textContent = botScore + " (Loser!)";
+    botScoreTxt.classList = "loseHistory";
+  } else if (botScore == 5) {
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
+
+    botScoreTxt.textContent = botScore + " (Winner!)";
+    botScoreTxt.classList = "winHistory";
+    p1ScoreTxt.textContent = p1Score + " (Loser!)";
+    p1ScoreTxt.classList = "loseHistory";
   }
 }

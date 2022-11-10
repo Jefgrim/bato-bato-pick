@@ -10,26 +10,30 @@
   border-radius: 5px;
 }
 
+.player h2 {
+  font-size: medium;
+}
+
 .btns {
-    width: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .btns button {
-    margin: 5px;
+  margin: 5px;
 }
 
 .matchHistoryContainer {
-    height: 250px;
-    overflow: scroll;
+  height: 250px;
+  overflow-y: scroll;
 }
 
 .mhContentContainer {
-    text-align: center;
+  text-align: center;
 }
 
 .winHistory {
@@ -41,5 +45,5 @@
 }
 
 .drawHistory {
-    color: gray;
+  color: gray;
 }
