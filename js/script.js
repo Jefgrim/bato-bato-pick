@@ -20,7 +20,6 @@ batoBtn.addEventListener("click", pickedBato);
 papelBtn.addEventListener("click", pickedpapel);
 guntingBtn.addEventListener("click", pickedgunting);
 
-
 // functions for buttons
 function pickedBato() {
   let botpicks = Math.floor(Math.random() * 3);
@@ -40,6 +39,7 @@ function pickedBato() {
 
     // add match history item content text
     mhItem.textContent = "Player 1 Picks Bato | Bot Picks Bato | Draw";
+    mhItem.classList = "drawHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
@@ -59,7 +59,8 @@ function pickedBato() {
     mh.insertAdjacentElement("afterbegin", mhItemContainer);
 
     // add match history item content text
-    mhItem.textContent = "Player 1 Picks Bato | Bot Picks Papel | Bot Wins";
+    mhItem.textContent = "Player 1 Picks Bato | Bot Picks Papel | Bot Scored";
+    mhItem.classList = "loseHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
@@ -82,13 +83,28 @@ function pickedBato() {
     mh.insertAdjacentElement("afterbegin", mhItemContainer);
 
     // add match history item content text
-    mhItem.textContent = "Player 1 Picks Bato | Bot Picks Gunting | Player 1 Wins";
+    mhItem.textContent =
+      "Player 1 Picks Bato | Bot Picks Gunting | Player 1 Scored";
+    mhItem.classList = "winHistory";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
 
     // changed the text of score
     p1ScoreTxt.textContent = p1Score;
+  }
+
+  //   Check who wins
+  if (p1Score == 5) {
+    console.log("Player 1 Wins!");
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
+  } else if (botScore == 5) {
+    console.log("Bot Wins!");
+    batoBtn.setAttribute("disabled", "");
+    papelBtn.setAttribute("disabled", "");
+    guntingBtn.setAttribute("disabled", "");
   }
 }
 
@@ -109,7 +125,8 @@ function pickedpapel() {
     mh.insertAdjacentElement("afterbegin", mhItemContainer);
 
     // add match history item content text
-    mhItem.textContent = "Player 1 Picks Papel | Bot Picks Bato | Player 1 Wins";
+    mhItem.textContent =
+      "Player 1 Picks Papel | Bot Picks Bato | Player 1 Scored";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
@@ -123,19 +140,19 @@ function pickedpapel() {
     // add score to draw
     draws += 1;
 
-     // create element to be added later using insert adjacent element
-     let mhItemContainer = document.createElement("div");
-     mhItemContainer.classList = "mhContentContainer";
-     let mhItem = document.createElement("h3");
- 
-     // insert match history container inside match history div
-     mh.insertAdjacentElement("afterbegin", mhItemContainer);
- 
-     // add match history item content text
-     mhItem.textContent = "Player 1 Picks Papel | Bot Picks Papel | Draw";
- 
-     // insert match history item inside match history container
-     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
+    // create element to be added later using insert adjacent element
+    let mhItemContainer = document.createElement("div");
+    mhItemContainer.classList = "mhContentContainer";
+    let mhItem = document.createElement("h3");
+
+    // insert match history container inside match history div
+    mh.insertAdjacentElement("afterbegin", mhItemContainer);
+
+    // add match history item content text
+    mhItem.textContent = "Player 1 Picks Papel | Bot Picks Papel | Draw";
+
+    // insert match history item inside match history container
+    mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
   }
 
   //   bot picks gunting
@@ -143,19 +160,20 @@ function pickedpapel() {
     // add score to bot
     botScore += 1;
 
-     // create element to be added later using insert adjacent element
-     let mhItemContainer = document.createElement("div");
-     mhItemContainer.classList = "mhContentContainer";
-     let mhItem = document.createElement("h3");
- 
-     // insert match history container inside match history div
-     mh.insertAdjacentElement("afterbegin", mhItemContainer);
- 
-     // add match history item content text
-     mhItem.textContent = "Player 1 Picks Papel | Bot Picks Gunting | Bot Wins";
- 
-     // insert match history item inside match history container
-     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
+    // create element to be added later using insert adjacent element
+    let mhItemContainer = document.createElement("div");
+    mhItemContainer.classList = "mhContentContainer";
+    let mhItem = document.createElement("h3");
+
+    // insert match history container inside match history div
+    mh.insertAdjacentElement("afterbegin", mhItemContainer);
+
+    // add match history item content text
+    mhItem.textContent =
+      "Player 1 Picks Papel | Bot Picks Gunting | Bot Scored";
+
+    // insert match history item inside match history container
+    mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
 
     // changed the text of score
     botScoreTxt.textContent = botScore;
@@ -179,11 +197,10 @@ function pickedgunting() {
     mh.insertAdjacentElement("afterbegin", mhItemContainer);
 
     // add match history item content text
-    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Bato | Bot Wins";
+    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Bato | Bot Scored";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
-
 
     // changed the text of score
     botScoreTxt.textContent = botScore;
@@ -203,7 +220,8 @@ function pickedgunting() {
     mh.insertAdjacentElement("afterbegin", mhItemContainer);
 
     // add match history item content text
-    mhItem.textContent = "Player 1 Picks Gunting | Bot Picks Bato | Player 1 Wins";
+    mhItem.textContent =
+      "Player 1 Picks Gunting | Bot Picks Bato | Player 1 Scored";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
