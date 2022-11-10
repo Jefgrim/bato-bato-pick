@@ -289,7 +289,7 @@ function pickedgunting() {
 
     // add match history item content text
     mhItem.textContent =
-      "Player 1 Picks Gunting | Bot Picks Bato | Player 1 Scored";
+      "Player 1 Picks Gunting | Bot Picks Papel | Player 1 Scored";
 
     // insert match history item inside match history container
     mhItemContainer.insertAdjacentElement("afterbegin", mhItem);
