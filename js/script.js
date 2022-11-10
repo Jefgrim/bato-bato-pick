@@ -2,10 +2,26 @@
 let p1Score = 0;
 let botScore = 0;
 let draws = 0;
+let winMessage = [
+  "Wow Galing mo ah, Chamba!",
+  "Bilib na ako sayo, expert ka ata sa larong to",
+  "Hindi ka na naawa sa Bot, Congrats!",
+  "Chamba lang yan!",
+];
+
+let loseMessage = [
+  "Kawawa natalo sa bot T_T",
+  "Okay lang yan practice ka pa",
+  "Malas mo naman",
+  "Galing ng bot ko noh?",
+];
 
 // get the score text
 let p1ScoreTxt = document.querySelector("#p1ScoreTxt");
 let botScoreTxt = document.querySelector("#botScoreTxt");
+
+// get game message text
+let gameMsg = document.querySelector("#gameMessage");
 
 // get Image for picked moves
 let playerMoveImg = document.querySelector("#playerPickedMove");
@@ -121,23 +137,27 @@ function pickedBato() {
 
   //   Check who wins
   if (p1Score == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     p1ScoreTxt.textContent = p1Score + " (Winner!)";
     p1ScoreTxt.classList = "winHistory";
     botScoreTxt.textContent = botScore + " (Loser!)";
     botScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
   } else if (botScore == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     botScoreTxt.textContent = botScore + " (Winner!)";
     botScoreTxt.classList = "winHistory";
     p1ScoreTxt.textContent = p1Score + " (Loser!)";
     p1ScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
   }
 }
 
@@ -232,23 +252,27 @@ function pickedpapel() {
 
   //   Check who wins
   if (p1Score == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     p1ScoreTxt.textContent = p1Score + " (Winner!)";
     p1ScoreTxt.classList = "winHistory";
     botScoreTxt.textContent = botScore + " (Loser!)";
     botScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
   } else if (botScore == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     botScoreTxt.textContent = botScore + " (Winner!)";
     botScoreTxt.classList = "winHistory";
     p1ScoreTxt.textContent = p1Score + " (Loser!)";
     p1ScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
   }
 }
 
@@ -340,23 +364,27 @@ function pickedgunting() {
 
   //   Check who wins
   if (p1Score == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     p1ScoreTxt.textContent = p1Score + " (Winner!)";
     p1ScoreTxt.classList = "winHistory";
     botScoreTxt.textContent = botScore + " (Loser!)";
     botScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
   } else if (botScore == 5) {
-    batoBtn.setAttribute("disabled", "");
-    papelBtn.setAttribute("disabled", "");
-    guntingBtn.setAttribute("disabled", "");
+    batoBtn.style.display = "none";
+    papelBtn.style.display = "none";
+    guntingBtn.style.display = "none";
 
     botScoreTxt.textContent = botScore + " (Winner!)";
     botScoreTxt.classList = "winHistory";
     p1ScoreTxt.textContent = p1Score + " (Loser!)";
     p1ScoreTxt.classList = "loseHistory";
+
+    gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
   }
 }
 

@@ -1,12 +1,14 @@
 body {
-    background-color: gray;
+  background-color: gray;
+  height: 100%;
 }
+
 .playersContainer {
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 331px);
+  /* height: calc(100vh - 331px); */
   /* background-color: rgb(214, 197, 197); */
   border-radius: 5px;
 }
@@ -30,10 +32,14 @@ body {
 }
 
 .pickedMove {
-    margin-top: 20px;
-    width: 100px;
-    height: 100px;
-    animation-iteration-count: infinite;
+  margin-top: 20px;
+  width: 100px;
+  height: 100px;
+  animation-iteration-count: infinite;
+}
+
+.gameMessageTxt {
+    text-align: center;
 }
 
 .btns {
@@ -45,8 +51,15 @@ body {
   justify-content: center;
 }
 
-.btns button {
-  margin: 5px;
+.imgBtn {
+  width: 60px;
+  height: 60px;
+  margin: 10px;
+  transition: all 0.2s ease-in-out;
+}
+
+.imgBtn:hover {
+  transform: scale(1.5);
 }
 
 .matchHistoryContainer {
