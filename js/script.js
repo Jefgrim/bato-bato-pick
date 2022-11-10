@@ -23,10 +23,19 @@ let mh = document.querySelector("#matchHistory");
 batoBtn.addEventListener("click", pickedBato);
 papelBtn.addEventListener("click", pickedpapel);
 guntingBtn.addEventListener("click", pickedgunting);
+batoBtn.addEventListener("mouseover", wobbleImgAddAnimation);
+batoBtn.addEventListener("mouseout", wobbleImgRemoveAnimation);
+papelBtn.addEventListener("mouseover", wobbleImgAddAnimation);
+papelBtn.addEventListener("mouseout", wobbleImgRemoveAnimation);
+guntingBtn.addEventListener("mouseover", wobbleImgAddAnimation);
+guntingBtn.addEventListener("mouseout", wobbleImgRemoveAnimation);
 
 // functions for buttons
 function pickedBato() {
   let botpicks = Math.floor(Math.random() * 3);
+
+  playerMoveImg.classList.remove("animate__swing");
+  botMoveImg.classList.remove("animate__swing");
 
   //   bot picks bato
   if (botpicks == 0) {
@@ -134,6 +143,9 @@ function pickedBato() {
 
 function pickedpapel() {
   let botpicks = Math.floor(Math.random() * 3);
+
+  playerMoveImg.classList.remove("animate__swing");
+  botMoveImg.classList.remove("animate__swing");
 
   //   bot picks bato
   if (botpicks == 0) {
@@ -243,6 +255,9 @@ function pickedpapel() {
 function pickedgunting() {
   let botpicks = Math.floor(Math.random() * 3);
 
+  playerMoveImg.classList.remove("animate__swing");
+  botMoveImg.classList.remove("animate__swing");
+
   //   bot picks bato
   if (botpicks == 0) {
     // add score to bot
@@ -343,4 +358,17 @@ function pickedgunting() {
     p1ScoreTxt.textContent = p1Score + " (Loser!)";
     p1ScoreTxt.classList = "loseHistory";
   }
+}
+
+function wobbleImgAddAnimation() {
+  playerMoveImg.classList.add("animate__swing");
+  botMoveImg.classList.add("animate__swing");
+
+  playerMoveImg.src = "images/Rock-Player.svg";
+  botMoveImg.src = "images/Rock-Bot.svg";
+}
+
+function wobbleImgRemoveAnimation() {
+  playerMoveImg.classList.remove("animate__swing");
+  botMoveImg.classList.remove("animate__swing");
 }

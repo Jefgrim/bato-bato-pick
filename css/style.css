@@ -33,6 +33,7 @@ body {
     margin-top: 20px;
     width: 100px;
     height: 100px;
+    animation-iteration-count: infinite;
 }
 
 .btns {
