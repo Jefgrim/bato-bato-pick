@@ -20,6 +20,7 @@ batoBtn.addEventListener("click", pickedBato);
 papelBtn.addEventListener("click", pickedpapel);
 guntingBtn.addEventListener("click", pickedgunting);
 
+
 // functions for buttons
 function pickedBato() {
   let botpicks = Math.floor(Math.random() * 3);
