@@ -31,6 +31,7 @@ let botMoveImg = document.querySelector("#botPickedMove");
 let batoBtn = document.querySelector("#bato");
 let papelBtn = document.querySelector("#papel");
 let guntingBtn = document.querySelector("#gunting");
+let restartBtn = document.querySelector("#restartGameBtn");
 
 // get match history to be used as parent node
 let mh = document.querySelector("#matchHistory");
@@ -45,6 +46,7 @@ papelBtn.addEventListener("mouseover", wobbleImgAddAnimation);
 papelBtn.addEventListener("mouseout", wobbleImgRemoveAnimation);
 guntingBtn.addEventListener("mouseover", wobbleImgAddAnimation);
 guntingBtn.addEventListener("mouseout", wobbleImgRemoveAnimation);
+restartBtn.addEventListener("click", reloadGame);
 
 // functions for buttons
 function pickedBato() {
@@ -147,6 +149,8 @@ function pickedBato() {
     botScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   } else if (botScore == 5) {
     batoBtn.style.display = "none";
     papelBtn.style.display = "none";
@@ -158,6 +162,8 @@ function pickedBato() {
     p1ScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   }
 }
 
@@ -262,6 +268,8 @@ function pickedpapel() {
     botScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   } else if (botScore == 5) {
     batoBtn.style.display = "none";
     papelBtn.style.display = "none";
@@ -273,6 +281,8 @@ function pickedpapel() {
     p1ScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   }
 }
 
@@ -374,6 +384,8 @@ function pickedgunting() {
     botScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = winMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   } else if (botScore == 5) {
     batoBtn.style.display = "none";
     papelBtn.style.display = "none";
@@ -385,6 +397,8 @@ function pickedgunting() {
     p1ScoreTxt.classList = "loseHistory";
 
     gameMsg.textContent = loseMessage[Math.floor(Math.random() * 3)];
+
+    restartBtn.style.display = "block";
   }
 }
 
@@ -399,4 +413,8 @@ function wobbleImgAddAnimation() {
 function wobbleImgRemoveAnimation() {
   playerMoveImg.classList.remove("animate__swing");
   botMoveImg.classList.remove("animate__swing");
+}
+
+function reloadGame() {
+  window.location.reload();
 }
